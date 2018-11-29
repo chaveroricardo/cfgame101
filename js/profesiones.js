@@ -19,13 +19,22 @@ function Career(name){
   this.assetsIncome = [];
 
   this.liability = liability;
-  
-
 
 }
 
+function Piloto(name){
+  Career.call(this, name);
+  this.income = 35000;
+  this.profesion = "Piloto de Aviones";
 
 
+  
+
+}
+
+function expenses(){
+  
+}
 
 /*
 [
