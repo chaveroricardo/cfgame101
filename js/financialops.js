@@ -75,3 +75,13 @@ var random_num = rand(0, weighed_list.length-1);
 
 return weighed_list[random_num];
 }
+
+
+
+function expenses(){
+  
+}
+
+function totalIncome(){
+
+}
