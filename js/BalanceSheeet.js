@@ -54,7 +54,7 @@ var profesiones =
     "Piloto","Administrador","Médico",
     "Abogado","Ingeniero","Conserje","FullStack Developer",
     "Mecánico", "Conductor Uber", "Enfermero",
-    "Secretaria", "Profesor"
+    "Secretaria", "Profesor", "Diseñador UX/UI"
   ]
 
 
@@ -90,17 +90,76 @@ var negociosIncomeSmall = [
     },
     {
       name: "Acción - TSLA.MX",
-      description: "La volatilidad de los mercados y el miedo por la guerra comercial ha llevado a un mínimo histórico",
+      description: ["La volatilidad de los mercados y el miedo por la guerra comercial ha llevado a un mínimo histórico", "Es una acción prometedora para un futuro sin hidrocarburos", "Es una momento de máximos históricos, el optimismo por los mercados hace que llegue a su máximo histórico"],
+      cost: function costo(){var rand = function(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+     
+    var generateWeighedList = function(list, weight) {
+        var weighed_list = [];
+         
+        // Loop over weights
+        for (var i = 0; i < weight.length; i++) {
+            var multiples = weight[i] * 100;
+             
+            // Loop over the list of items
+            for (var j = 0; j < multiples; j++) {
+                weighed_list.push(list[i]);
+            }
+        }
+         
+        return weighed_list;
+    };
+     var  low = function(){
+            var min=111;
+            var max=150;
+            var random = Math.floor(Math.random()*(+max- +min) + +min);
+            return random;}
+    
+    var middle =
+          function(){
+            var min=650;
+            var max=950;
+            var random = Math.floor(Math.random()*(+max- +min) + +min);
+            return random;}
+    
+    var high = 
+            function(){
+              var min=1200;
+              var max=1500;
+              var random = Math.floor(Math.random()*(+max- +min) + +min);
+              return random;}
+    
+    var list = [low(),middle(),high()];
+    var weight = [0.34, 0.25, 0.25];
+    var weighed_list = generateWeighedList(list, weight);
+     
+    var random_num = rand(0, weighed_list.length-1);
+     
+    weighed_list[random_num];
+    },
+      tradingRange: "650 a 950",
+      numeroDeAcciones: 0,
+
+    },
+    {
+      name: "Acción - Cetes",
+      description: "Aprovecha ahora que hay tasas máximas en renta fija",
+      cost:100,
+      cashFlow: .66,
+      numeroDeCetes: 0,
+    },
+    {
+      name: "Fondo Indexado ETF's S&P500",
+      description: "Invertir en fondos indexados es la forma más segura de hacer crecer tu dinero en el largo plazo",
       cost:function(){
         var min=111;
-        var max=223;
+        var max=150;
         var random = Math.floor(Math.random()*(+max- +min) + +min);
         return random;
       },
-      tradingRange: "250 a 350",
+      tradingRange: "450 a 650",
       numeroDeAcciones: 0,
-
-
     }
 
   ];
