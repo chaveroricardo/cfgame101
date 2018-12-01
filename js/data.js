@@ -1,5 +1,3 @@
-
-
 // profesiones
 
 var profesiones =
@@ -9,7 +7,6 @@ var profesiones =
     "Mecánico", "Conductor Uber", "Enfermero",
     "Secretaria", "Profesor", "Diseñador UX/UI"
   ]
-
 
 
   //stocks

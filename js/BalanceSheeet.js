@@ -1,4 +1,4 @@
-function Career(name){
+function Career(name, income, profesion, savings, carLoan, creditCardLoan, studentLoan, otherExpenses){
   this.name = name;
   this.income = income;
   this.business = business;
@@ -15,8 +15,14 @@ function Career(name){
     return this.mortgageLiability*pagoPorMillar/1000;
   }
   this.carLoan = carLoan;
-  this.creditCardLoan = creditCardLoan;
-  this.studentLoan = studentLoan;
+  this.creditCardLoan = function(){
+    var pagoPorMillar = 54.2;
+    return this.creditCardLiability*pagoPorMillar/1000;
+  };
+  this.studentLoan = function(){
+    var pagoPorMillar = 22.4;
+    return this.studentLoanLiability*pagoPorMillar/1000;
+  };
   this.otherExpenses = otherExpenses;
   this.loanPayment = function (){
     var monthPayment = this.loanPaymentLiability*.1;
@@ -31,8 +37,11 @@ function Career(name){
   this.mortgageLiability = mortgageLiability;
   this.carLoanLiability = carLoanLiability;
   this.creditCardLiability = creditCardLiability;
+  this.studentLoanLiability = studentLoanLiability;
   this.loanPaymentLiability = loanPaymentLiability;
+
+  this.realStateLiability = realStateLiability;
   
 }
 
-
+// var Piloto = 

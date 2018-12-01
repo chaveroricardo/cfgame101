@@ -1,4 +1,3 @@
-
 // funcion para weighted probability
 
 function probabilidad(){
@@ -38,6 +37,7 @@ var random_num = rand(0, weighed_list.length-1);
 return weighed_list[random_num];
 }
 
+// funcion de probabilidad poca
 
 function probabilidad2(){
   var rand = function(min, max) {
@@ -77,10 +77,13 @@ return weighed_list[random_num];
 }
 
 
+//función de gastos
 
 function expenses(){
   
 }
+
+//función de Ingreso Total
 
 function totalIncome(){
 
