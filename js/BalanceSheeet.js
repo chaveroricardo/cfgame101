@@ -59,7 +59,7 @@ var profesiones =
 
 
 
- var negociosIncomeSmall = [
+var negociosIncomeSmall = [
     {
       name: "Empieza un blog",
       description: "Genera un ingreso adicional con el marketing de referidos",
@@ -104,7 +104,8 @@ var profesiones =
     }
 
   ];
-    var negociosIncomeBig = [
+    
+var negociosIncomeBig = [
       {
         name: "Departamento Dos Recámaras en la Roma",
         description: "Pon a rentar un departamento y paga un crédito hipotecario. La renta promedio en el país es de 6% y el costo del crédito de 12% (CAT)",
