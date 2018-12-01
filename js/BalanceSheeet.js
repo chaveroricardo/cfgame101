@@ -2,7 +2,7 @@ function Career(name){
   this.name = name;
   this.income = income;
   this.business = function(){
-    
+    return "Esto todavía no";
   }
 
   this.profesion = profesion;
@@ -38,8 +38,6 @@ function Career(name){
 
 }
 
-
-
 function expenses(){
   
 }
@@ -48,7 +46,6 @@ function totalIncome(){
 
 }
 
-
 var profesiones =
 [
     "Piloto","Administrador","Médico",
@@ -56,7 +53,6 @@ var profesiones =
     "Mecánico", "Conductor Uber", "Enfermero",
     "Secretaria", "Profesor", "Diseñador UX/UI"
   ]
-
 
 
 var negociosIncomeSmall = [
@@ -90,57 +86,28 @@ var negociosIncomeSmall = [
     },
     {
       name: "Acción - TSLA.MX",
-      description: ["La volatilidad de los mercados y el miedo por la guerra comercial ha llevado a un mínimo histórico", "Es una acción prometedora para un futuro sin hidrocarburos", "Es una momento de máximos históricos, el optimismo por los mercados hace que llegue a su máximo histórico"],
-      cost: function costo(){var rand = function(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-     
-    var generateWeighedList = function(list, weight) {
-        var weighed_list = [];
-         
-        // Loop over weights
-        for (var i = 0; i < weight.length; i++) {
-            var multiples = weight[i] * 100;
-             
-            // Loop over the list of items
-            for (var j = 0; j < multiples; j++) {
-                weighed_list.push(list[i]);
-            }
-        }
-         
-        return weighed_list;
-    };
-     var  low = function(){
+      description:       
+        ["La volatilidad de los mercados y el miedo por la guerra comercial ha llevado a un mínimo histórico", "Es una acción prometedora para un futuro sin hidrocarburos, TSLA trabaja muy fuerte para hacer de uso masivo sus automóviles", "Es una momento de máximos históricos, el optimismo por los mercados hace que llegue a su máximo histórico"],
+      cost: [
+         function(){
             var min=111;
             var max=150;
             var random = Math.floor(Math.random()*(+max- +min) + +min);
-            return random;}
-    
-    var middle =
-          function(){
+            return random;
+          },
+         function(){
             var min=650;
             var max=950;
             var random = Math.floor(Math.random()*(+max- +min) + +min);
-            return random;}
-    
-    var high = 
-            function(){
+            return random;},
+         function(){
               var min=1200;
               var max=1500;
               var random = Math.floor(Math.random()*(+max- +min) + +min);
               return random;}
-    
-    var list = [low(),middle(),high()];
-    var weight = [0.34, 0.25, 0.25];
-    var weighed_list = generateWeighedList(list, weight);
-     
-    var random_num = rand(0, weighed_list.length-1);
-     
-    weighed_list[random_num];
-    },
-      tradingRange: "650 a 950",
+      ],
+      tradingRange: "450 a 950",
       numeroDeAcciones: 0,
-
     },
     {
       name: "Acción - Cetes",
