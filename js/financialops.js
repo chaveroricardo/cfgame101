@@ -1,4 +1,4 @@
-// funcion para weighted probability
+   // funcion para weighted probability
 
 function probabilidad(){
   var rand = function(min, max) {
