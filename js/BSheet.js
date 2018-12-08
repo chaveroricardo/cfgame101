@@ -49,3 +49,4 @@ function Career(name, income, profesion, savings, carLoan, otherExpenses, ){
   
 }
 
+
