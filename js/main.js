@@ -1,4 +1,5 @@
-var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", "Lose", "$1000000", "Lose", "$350", "$5", "$99"];
+var options = ["Q","N","O","N","D","N","H","N","Q","N","O","N","D","N","Q","N","Q","N","O","N","D","N","C","N"];
+var options2 = ["Quincena","Negocio","Oportunidad","Negocio","Deuda","Negocio","Hijo","Negocio","Quincena","Negocio","Oportunidad","Negocio","Deuda","Negocio","Quiebra","Negocio","Quincena","Negocio","Oportunidad","Negocio","Deuda","Negocio","Caridad","Negocio"];
 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
@@ -22,16 +23,7 @@ function RGB2Color(r,g,b) {
 }
 
 function getColor(item, maxitem) {
-  var phase = 0;
-  var center = 128;
-  var width = 127;
-  var frequency = Math.PI*2/maxitem;
-  
-  red   = Math.sin(frequency*item+2+phase) * width + center;
-  green = Math.sin(frequency*item+0+phase) * width + center;
-  blue  = Math.sin(frequency*item+4+phase) * width + center;
-  
-  return RGB2Color(red,green,blue);
+
 }
 
 function drawRouletteWheel() {
@@ -47,12 +39,12 @@ function drawRouletteWheel() {
     ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
 
-    ctx.font = 'bold 12px Helvetica, Arial';
+    ctx.font = 'bold 14px Helvetica, Arial';
 
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
       //ctx.fillStyle = colors[i];
-      ctx.fillStyle = getColor(i, options.length);
+      ctx.fillStyle = RGB2Color(255,250,250);
 
       ctx.beginPath();
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
@@ -115,7 +107,7 @@ function stopRotateWheel() {
   var index = Math.floor((360 - degrees % 360) / arcd);
   ctx.save();
   ctx.font = 'bold 30px Helvetica, Arial';
-  var text = options[index]
+  var text = options2[index];
   ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
   ctx.restore();
 }
@@ -127,3 +119,4 @@ function easeOut(t, b, c, d) {
 }
 
 drawRouletteWheel();
+

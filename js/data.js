@@ -8,6 +8,7 @@ var profesiones =
     "Secretaria", "Profesor", "Diseñador UX/UI"
   ]
 
+var name = document.getElementById("exampleFormControlInput1");
 
   //stocks
 
