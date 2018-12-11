@@ -14,12 +14,11 @@ var ctx;
 document.getElementById("spin").addEventListener("click", spin);
 
 function byte2Hex(n) {
-  var nybHexString = "0123456789ABCDEF";
-  return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
+
 }
 
 function RGB2Color(r,g,b) {
-	return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
+
 }
 
 function getColor(item, maxitem) {
@@ -122,7 +121,7 @@ drawRouletteWheel();
 
 
 function start(){
-  
+
 };
 
 
