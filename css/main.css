@@ -203,3 +203,7 @@ a:focus, a:hover, a:active {
 .bienvenida{
   color: white;
 }
+
+.bizsmall{
+  display:hide;
+}
