@@ -204,6 +204,6 @@ a:focus, a:hover, a:active {
   color: white;
 }
 
-.bizsmall{
-  display:hide;
+.biz{
+  display:none;
 }

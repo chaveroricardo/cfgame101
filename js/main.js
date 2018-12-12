@@ -34,7 +34,7 @@ function drawRouletteWheel() {
     var insideRadius = 125;
 
     ctx = canvas.getContext("2d");
-    ctx.clearRect(0,0,500,500);
+    ctx.clearRect(0,0,600,600);
 
     ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
@@ -85,6 +85,10 @@ function spin() {
   spinAngleStart = Math.random() * 10 + 10;
   spinTime = 0;
   spinTimeTotal = Math.random() * 3 + 4 * 1000;
+  $(document).ready(function(){
+    $(".biz").css("display", "none");
+    $(".biz").removeClass("justify-content","center");
+  })
   rotateWheel();
 }
 
@@ -108,8 +112,10 @@ function stopRotateWheel() {
   ctx.save();
   ctx.font = 'bold 30px Helvetica, Arial';
   var text = options2[index];
+  console.log(text);
   ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
   ctx.restore();
+  negocios(text);
 }
 
 function easeOut(t, b, c, d) {
@@ -125,4 +131,11 @@ function start(){
 
 };
 
-
+function negocios(text){
+  if(text == "Negocio"){
+    $(document).ready(function(){
+      $(".biz").css("display", "flex");
+      $(".biz").addClass("justify-content","center");
+    })
+  }
+}
