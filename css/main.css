@@ -212,18 +212,139 @@ p .thick{
   font-weight: bold;
 }
 
-.gastos{
+
+#nombreDeUsuario{
 
 }
-.empleo{
+
+#jugadores{
+
 }
 
-.intereses{
+/* flujo de efectivo */
+
+#totalGastos{
+
 }
 
-.realstate{
+#incomeBar{
+
 }
 
-.ingresos{
+#ingresoPasivo{
+
+}
+
+/* ingresos */
+
+#empleo{
+
+}
+
+#job{
+  
+}
+
+#intereses{
+
+}
+
+#negocios{
+
+}
+
+/* casflow */
+
+#ahorroTotal{
+
+}
+
+#totalIngreso{
+
+}
+
+#totalGastos{
+
+}
+
+#efectivo{
+
+}
+
+/* gastos */
+
+#impuestos{
+
+}
+
+#hipoteca{
+
+}
+
+#automovil{
+
+}
+
+#tarjetaCredito{
+
+}
+
+#creditoEstudiantil{
+
+}
+
+#otrosGastos{
+
+}
+
+#hijos{
+
+}
+
+/* activos */
+
+#tslamx{
+
+}
+
+#spymx{
+
+}
+
+#pgmx{
+
+}
+
+#btcmx{
+
+}
+
+#negocios1{
+
+}
+
+#negocios2{
+
+}
+
+#negocios3{
+
+}
+
+/* pasivos */
+
+#mortgage{
+
+}
+
+#carLoan{
+
+}
+
+#creditCardLoan{
+
+}
+
+#loans{
 
 }

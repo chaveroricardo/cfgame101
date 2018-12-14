@@ -39,3 +39,10 @@ function expenses(){
 function totalIncome(){
 
 }
+
+//función random
+
+function randomName(){
+    var random = Math.floor(Math.random()*(this.profesiones.length-1));
+    return random;
+}

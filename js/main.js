@@ -1,3 +1,32 @@
+/*Variable globales*/
+var nickName = document.getElementById('nickName');
+var useNickName = localStorage.getItem('nickName');
+
+//Inicio
+
+function start(){
+  let userName = document.getElementById('nombreDeusuario').value;
+  if( userName != ""){
+    /*Guardando en LS*/
+    localStorage.setItem('nickName', userName);
+    nickName.innerHTML = userName;
+  }
+}
+
+window.onload = function () {
+  if( localStorage.getItem('nickName') != null){
+    nickName.innerHTML = useNickName;
+  }
+}
+
+function clearLS(){
+  nickName.innerHTML = '';
+  localStorage.clear();
+}
+
+//Ruleta
+
+
 var options = ["Q","N","O","N","D","N","H","N","Q","N","O","N","D","N","Q","N","Q","N","O","N","D","N","C","N"];
 var options2 = ["Quincena","Negocio","Oportunidad","Negocio","Deuda","Negocio","Hijo","Negocio","Quincena","Negocio","Oportunidad","Negocio","Deuda","Negocio","Quiebra","Negocio","Quincena","Negocio","Oportunidad","Negocio","Deuda","Negocio","Caridad","Negocio"];
 
@@ -127,9 +156,7 @@ function easeOut(t, b, c, d) {
 drawRouletteWheel();
 
 
-function start(){
 
-};
 
 function negocios(text){
   if(text == "Negocio"){

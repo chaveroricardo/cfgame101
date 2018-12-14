@@ -39,7 +39,7 @@ var negociosStocks =[
     numeroDeAcciones: 0,
   },
   {
-    name: "Acción - Fondo Indexado ETF's S&P500",
+    name: "Acción - SPY.MX (ETF's S&P500)",
     description: ["La volatilidad de los mercados y el miedo por la guerra comercial ha llevado a un mínimo histórico en el S&P 500","Invertir en fondos indexados es la forma más segura de hacer crecer tu dinero en el largo plazo","Se encuentra una economía sólida, las tasas de desempleo son bajas y las empresas generan valor. Estamos en máximos históricos"],
     cost: [
       function(){
@@ -63,7 +63,7 @@ var negociosStocks =[
           numeroDeAcciones: 0,
     },
     {
-      name: " Acción - PG (Procter & Gamble)",
+      name: " Acción - PG.MX (Procter & Gamble)",
       description: ["La volatilidad de los mercados y el miedo por la guerra comercial ha llevado a un mínimo histórico en el S&P 500","Invertir en fondos indexados es la forma más segura de hacer crecer tu dinero en el largo plazo","Se encuentra una economía sólida, las tasas de desempleo son bajas y las empresas generan valor. Estamos en máximos históricos"],
       cost: [
         function(){
@@ -87,7 +87,7 @@ var negociosStocks =[
             numeroDeAcciones: 0,
       },
       {
-        name: " Bitcoin",
+        name: " Bitcoin - BTC.MX",
         description: ["La especulación de una nueva tecnología terminó con este mercado y la burbuja ha terminado","Es una tecnología innovadora y que puedes experimentar","El boom del bitcoin, todo mundo quiere entrar y está en sus máximos históricos"],
         cost: [
           function(){

@@ -24,6 +24,7 @@
         <img src="img/N sola_96x96.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Net Worth
       </a>
+      <p class="navbar-brand"><span id="nickName">B</span></p>
     </nav>
 
     <!-- body -->
@@ -32,90 +33,161 @@
      <div class="container board">
        <div class="row">
               <div class="col-2">
-                  <input type="button" class="btn btn-primary" value="Jugar" id='spin' />
+                  <input type="button" class="btn btn-primary" value="Jugar" id='spin'/>
                   <hr>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseBS" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseBS" role="button" aria-expanded="false" aria-controls="collapseBS">
                   Estado Financiero
                 </a>
                 <br>
                 <br>
                 <hr>
                 <br>
-                <a class="biz btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="biz btn btn-primary" data-toggle="collapse" href="#collapseBiz" role="button" aria-expanded="false" aria-controls="collapseBiz">
                   Pequeño
                 </a>
                 <hr>
-                <a class="biz btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="biz btn btn-primary" data-toggle="collapse" href="#collapseBiz" role="button" aria-expanded="false" aria-controls="collapseBiz">
                   Grande
                 </a>
               </div>
               <div class="col-10">
                   <canvas id="canvas" width="500" height="500"></canvas>
-              </div>
-              
+              </div> 
         </div> 
+
+        <!-- estado financiero -->
       <div class="collapse" id="collapseBS">
           <div class="card card-body">
               <div>
-                <h3>Flujo de Efectivo</h3>
-                <p>
+                <h3>Estado Financiero</h3>
+                <p id="totalGastos">
                   Total de Gastos: $ 0.0
                 </p>
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div id="incomeBar" class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p>
+                <p id="ingresoPasivo">
                   Ingreso Pasivo: $ 0.0
                 </p>
               </div>
-              <table class="table">
+              <table class="table table-hover table-sm">
                   <thead>
                     <tr>
+                      <th scope="col"></th>
                       <th scope="col">Ingresos</th>
-                      <th scope="col" class="ingresos"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row" class="empleo">Empleo</th>
-                      <td>$ 0.0</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Intereses/Dividendos</th>
-                      <td class="intereses">$ 0.0</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Bienes Raíces/Negocios</th>
-                      <td class="realstate">$ 0.0</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table class="table">
-                  <thead>
-                    <tr>
+                      <th scope="col"></th>
                       <th scope="col">Gastos</th>
-                      <th scope="col" class="gastos"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" class="empleo">Empleo</th>
-                      <td>$ 0.0</td>
+                      <th scope="row" id="job">Empleo</th>
+                      <td id="empleo">$ 0.0</td>
+                      <th scope="row">Impuestos</th>
+                      <td id="impuestos">$ 0.0</td>
                     </tr>
                     <tr>
-                      <th scope="row">Intereses/Dividendos</th>
-                      <td class="intereses">$ 0.0</td>
+                      <th scope="row">Intereses</th>
+                      <td id="intereses">$ 0.0</td>
+                      <th scope="row">Hipoteca</th>
+                      <td id="hipoteca">$ 0.0</td>
                     </tr>
                     <tr>
-                      <th scope="row">Bienes Raíces/Negocios</th>
-                      <td class="realstate">$ 0.0</td>
+                      <th scope="row">Negocios</th>
+                      <td id="negocios1">$ 0.0</td>
+                      <th scope="row">Automóvil</th>
+                      <td id="automovil">$ 0.0</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-dark">Ahorro</th>
+                      <td class="table-dark" id="ahorroTotal">$ 0.0</td>
+                      <th scope="row">T. de Crédito</th>
+                      <td id="tarjetaCredito">$ 0.0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="table-dark">T. Ingreso</th>
+                        <td class="table-dark totalIngreso" id="totalIngreso">$ 0.0</td>
+                        <th scope="row">C. Estudiantil</th>
+                        <td id="creditoEstudiantil">$ 0.0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="table-dark">T. Gastos</th>
+                        <td class="table-dark totalGastos" id="totalGastos">$ 0.0</td>
+                        <th scope="row">Otros Gastos</th>
+                        <td id="otrosGastos">$ 0.0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="table-dark">Efectivo</th>
+                        <td class="table-dark efectivo" id="efectivo">$ 0.0</td>
+                        <th scope="row">Hijo(s)</th>
+                        <td id="hijos">$ 0.0</td>
                     </tr>
                   </tbody>
+                  <!-- activos y pasivos -->
+                  <thead>
+                      <tr>
+                        <th scope="col" class="table-success"></th>
+                        <th scope="col" class="table-success">Activos</th>
+                        <th scope="col" class="table-danger"></th>
+                        <th scope="col" class="table-danger">Pasivos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="table-success">TSLA.MX</th>
+                        <td class="table-success" id="tslamx"> 0.0</td>
+                        <th scope="row" class="table-danger">D. Hipoteca</th>
+                        <td class="table-danger" id="mortgage">$ 0.0</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="table-success">SPY.MX</th>
+                        <td class="table-success" id="spymx"> 0.0</td>
+                        <th scope="row" class="table-danger">D. Automóvil</th>
+                        <td class="table-danger" id="carLoan">$ 0.0</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="table-success">PG.MX</th>
+                        <td class="table-success" id="pgmx"> 0.0</td>
+                        <th scope="row" class="table-danger">Deuda T.C.</th>
+                        <td class="table-danger" id="creditCardLoan"> 0.0</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="table-success">BTC.MX</th>
+                        <td class="table-success" id="btcmx"> 0.0</td>
+                        <th scope="row" class="table-danger">Préstamos</th>
+                        <td class="table-danger" id="loans">$ 0.0</td>
+                      </tr>
+                      <tr>
+                          <th scope="row" class="table-success">Negocios</th>
+                          <td class="table-success" id="negocios1">$ 0.0</td>
+                          <th scope="row" class="table-danger"></th>
+                          <td class="table-danger"></td>
+                      </tr>
+                      <tr>
+                          <th scope="row" class="table-success">Negocios</th>
+                          <td class="table-success" id="negocios2">$ 0.0</td>
+                          <th scope="row" class="table-danger"></th>
+                          <td class="table-danger"></td>
+                      </tr>
+                      <tr>
+                          <th scope="row" class="table-success">Negocios</th>
+                          <td class="table-success" id="negocios3">$ 0.0</td>
+                          <th scope="row" class="table-danger"></th>
+                          <td class="table-danger"></td>
+                      </tr>
+                    </tbody>
                 </table>
           </div>
         </div>
-    </section>
-   
+        <!-- negocios -->
+        <div class="collapse" id="collapseBiz">
+            <div class="card card-body">
+            </div>
+        </div>
+   </section>
+   <div class="container my-5">
+      <button class="btn btn-danger" onclick="clearLS()">Limpiar LS</button>
+    </div>
     <!-- Footer -->
     <footer class="footer text-center">
       <div class="container">         
