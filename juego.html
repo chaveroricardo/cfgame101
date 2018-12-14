@@ -34,7 +34,7 @@
               <div class="col-2">
                   <input type="button" class="btn btn-primary" value="Jugar" id='spin' />
                   <hr>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseBS" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Estado Financiero
                 </a>
                 <br>
@@ -54,41 +54,61 @@
               </div>
               
         </div> 
-      <div class="collapse" id="collapseExample">
+      <div class="collapse" id="collapseBS">
           <div class="card card-body">
               <div>
                 <h3>Flujo de Efectivo</h3>
+                <p>
+                  Total de Gastos: $ 0.0
+                </p>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+                  <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p>
+                  Ingreso Pasivo: $ 0.0
+                </p>
               </div>
               <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
                       <th scope="col">Ingresos</th>
-                      <th scope="col">Activos</th>
-                      <th scope="col">Deudas</th>
+                      <th scope="col" class="ingresos"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">AirBnB</th>
-                      <td>$5,000.00</td>
-                      <td>$0.0</td>
-                      <td>$0.0</td>
+                      <th scope="row" class="empleo">Empleo</th>
+                      <td>$ 0.0</td>
                     </tr>
                     <tr>
-                      <th scope="row">TSLA.MX</th>
-                      <td>$0.0</td>
-                      <td>$145.0</td>
-                      <td>$0.0</td>
+                      <th scope="row">Intereses/Dividendos</th>
+                      <td class="intereses">$ 0.0</td>
                     </tr>
                     <tr>
-                      <th scope="row">Hijo</th>
-                      <td>-$6,000.00</td>
-                      <td>$0.0</td>
-                      <td>$0.0</td>
+                      <th scope="row">Bienes Raíces/Negocios</th>
+                      <td class="realstate">$ 0.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Gastos</th>
+                      <th scope="col" class="gastos"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="empleo">Empleo</th>
+                      <td>$ 0.0</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Intereses/Dividendos</th>
+                      <td class="intereses">$ 0.0</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Bienes Raíces/Negocios</th>
+                      <td class="realstate">$ 0.0</td>
                     </tr>
                   </tbody>
                 </table>
