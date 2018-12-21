@@ -1,26 +1,16 @@
-/*Variable globales*/
-var nickName = document.getElementById('nickName');
-var useNickName = localStorage.getItem('nickName');
+// /*Variable globales*/
+// var nickName = document.getElementById('nickName');
+// var useNickName = localStorage.getItem('nickName');
 
 //Inicio
 
-function start(){
-  let userName = document.getElementById('nombreDeusuario').value;
-  if( userName != ""){
-    /*Guardando en LS*/
-    localStorage.setItem('nickName', userName);
-    nickName.innerHTML = userName;
-  }
-}
-
-window.onload = function () {
-  if( localStorage.getItem('nickName') != null){
-    nickName.innerHTML = useNickName;
-  }
+window.onload = function start(){
+  var empleo = profesiones[randomName()];
+  $("#empleoElecto").html("Empleo: " + empleo);
 }
 
 function clearLS(){
-  nickName.innerHTML = '';
+  // nickName.innerHTML = '';
   localStorage.clear();
 }
 
