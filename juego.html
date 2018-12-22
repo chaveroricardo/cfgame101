@@ -33,7 +33,7 @@
      <div class="container board">
        <div class="row">
               <div class="col-2">
-                  <input type="button" class="btn btn-primary" value="Jugar" id='spin'/>
+                  <input type="button" class="btn btn-primary" value="Jugar" id="spin"/>
                   <hr>
                 <a class="btn btn-primary" data-toggle="collapse" href="#collapseBS" role="button" aria-expanded="false" aria-controls="collapseBS">
                   Estado Financiero
@@ -65,7 +65,7 @@
                   Total de Gastos: $ 0.0
                 </p>
                 <div class="progress">
-                  <div id="incomeBar" class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div id="incomeBar" class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <p id="ingresoPasivo">
                   Ingreso Pasivo: $ 0.0
@@ -113,7 +113,7 @@
                     </tr>
                     <tr>
                         <th scope="row" class="table-dark">T. Gastos</th>
-                        <td class="table-dark totalGastos" id="totalGastos">$ 0.0</td>
+                        <td class="table-dark totalGastos" id="totalGastos1">$ 0.0</td>
                         <th scope="row">Otros Gastos</th>
                         <td id="otrosGastos">$ 0.0</td>
                     </tr>
@@ -160,12 +160,6 @@
                       </tr>
                       <tr>
                           <th scope="row" class="table-success">Negocios</th>
-                          <td class="table-success" id="negocios1">$ 0.0</td>
-                          <th scope="row" class="table-danger"></th>
-                          <td class="table-danger"></td>
-                      </tr>
-                      <tr>
-                          <th scope="row" class="table-success">Negocios</th>
                           <td class="table-success" id="negocios2">$ 0.0</td>
                           <th scope="row" class="table-danger"></th>
                           <td class="table-danger"></td>
@@ -173,6 +167,12 @@
                       <tr>
                           <th scope="row" class="table-success">Negocios</th>
                           <td class="table-success" id="negocios3">$ 0.0</td>
+                          <th scope="row" class="table-danger"></th>
+                          <td class="table-danger"></td>
+                      </tr>
+                      <tr>
+                          <th scope="row" class="table-success">Negocios</th>
+                          <td class="table-success" id="negocios4">$ 0.0</td>
                           <th scope="row" class="table-danger"></th>
                           <td class="table-danger"></td>
                       </tr>
@@ -184,6 +184,7 @@
         <div class="collapse" id="collapseBiz">
             <div class="card card-body">
             </div>
+        </div>
         </div>
    </section>
    <div class="container my-5">

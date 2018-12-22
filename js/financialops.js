@@ -31,7 +31,7 @@ function probabilidad(){
 //función de gastos
 
 function expenses(){
-  
+ 
 }
 
 //función de Ingreso Total
@@ -46,3 +46,9 @@ function randomName(){
     var random = Math.floor(Math.random()*(this.profesiones.length-1));
     return random;
 }
+
+//funcion revaluate
+
+function revaluate(){
+    
+};

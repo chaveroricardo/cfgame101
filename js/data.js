@@ -1,14 +1,11 @@
 // profesiones
 
 var profesiones =
-[
-    "Piloto","Administrador","Médico",
-    "Abogado","Ingeniero","Conserje","FullStack Developer",
-    "Mecánico", "Conductor Uber", "Enfermero",
-    "Secretaria", "Profesor", "Diseñador UX/UI"
-  ]
+[ 
+  abogado,administrador,asistente, conserje, desarroladorSr,enfermero,ingeniero, mecanico, medico, piloto, profesor, taxi
+ ]
 
-var name = document.getElementById("exampleFormControlInput1");
+var name = document.getElementById("nombreDeUsuario");
 
   //stocks
 

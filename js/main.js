@@ -6,7 +6,37 @@
 
 window.onload = function start(){
   var empleo = profesiones[randomName()];
-  $("#empleoElecto").html("Empleo: " + empleo);
+  $("#empleoElecto").html("Empleo: " + empleo.profesion);
+  $("#empleo").html(empleo.income.toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#totalGastos").html("Total de Gastos: "+ empleo.totalExpenses().toLocaleString("MX", { style: 'currency', currency: 'USD'}));
+  $("#ingresoPasivo").html("Ingreso Pasivo: "+ empleo.residualIncome().toLocaleString("MX", { style: 'currency', currency: 'USD'}))
+  
+  // $("#incomeBar").style();
+
+  //cambiantes
+  $("#hijos").html("");
+  $("#intereses").html("");
+  $("#negocios1").html("");
+  $("#ahorroTotal").html(empleo.savings().toLocaleString("MX", { style: 'currency', currency: 'USD'}));
+  $("#totalGastos1").html(empleo.totalExpenses().toLocaleString("MX", { style: 'currency', currency: 'USD'}));
+  $("#totalIngreso").html(empleo.totalIncome().toLocaleString("MX", { style: 'currency', currency: 'USD'}));
+  $("#efectivo").html(empleo.cash().toLocaleString("MX", { style: 'currency', currency: 'USD'}));
+
+
+
+  //gastosCurrent
+  $("#impuestos").html(empleo.taxes().toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#hipoteca").html(empleo.mortgage().toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#automovil").html(empleo.carLoan().toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#tarjetaCredito").html(empleo.creditCardLoan().toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#creditoEstudiantil").html(empleo.studentLoan().toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#otrosGastos").html((empleo.otherExpenses()+empleo.loanPayment()).toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+
+  //Liabilities
+  $("#mortgage").html(empleo.mortgageLiability.toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#carLoan").html(empleo.carLoanLiability.toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#creditCardLoan").html(empleo.creditCardLiability.toLocaleString("MX", { style: 'currency', currency: 'USD' }));
+  $("#loans").html(empleo.loanPaymentLiability.toLocaleString("MX", { style: 'currency', currency: 'USD' }));
 }
 
 function clearLS(){
