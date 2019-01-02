@@ -3,15 +3,20 @@
 // var useNickName = localStorage.getItem('nickName');
 
 //Inicio
+var empleo = profesiones[randomName()];
 
 window.onload = function start(){
-  var empleo = profesiones[randomName()];
+  $(document).ready(function(){
+    $(".biz").css("display", "none");
+    $(".biz").removeClass("justify-content","center");
+  })
+
+  
   $("#empleoElecto").html("Empleo: " + empleo.profesion);
   $("#empleo").html(empleo.income.toLocaleString("MX", { style: 'currency', currency: 'USD' }));
   $("#totalGastos").html("Total de Gastos: "+ empleo.totalExpenses().toLocaleString("MX", { style: 'currency', currency: 'USD'}));
-  $("#ingresoPasivo").html("Ingreso Pasivo: "+ empleo.residualIncome().toLocaleString("MX", { style: 'currency', currency: 'USD'}))
-  
-  // $("#incomeBar").style();
+  $("#ingresoPasivo").html("Ingreso Pasivo: "+ empleo.residualIncome().toLocaleString("MX", { style: 'currency', currency: 'USD'}));
+  $("#incomeBar").width(empleo.percentage());
 
   //cambiantes
   $("#hijos").html("");
@@ -43,6 +48,7 @@ function clearLS(){
   // nickName.innerHTML = '';
   localStorage.clear();
 }
+
 
 //Ruleta
 
@@ -131,13 +137,11 @@ function drawRouletteWheel() {
 }
 
 function spin() {
+  $(".biz").css("display", "none");
+  $(".biz").removeClass("justify-content","center");
   spinAngleStart = Math.random() * 10 + 10;
   spinTime = 0;
   spinTimeTotal = Math.random() * 3 + 4 * 1000;
-  $(document).ready(function(){
-    $(".biz").css("display", "none");
-    $(".biz").removeClass("justify-content","center");
-  })
   rotateWheel();
 }
 
@@ -164,7 +168,7 @@ function stopRotateWheel() {
   console.log(text);
   ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
   ctx.restore();
-  negocios(text);
+  updateGameArea(text);
 }
 
 function easeOut(t, b, c, d) {
@@ -176,13 +180,14 @@ function easeOut(t, b, c, d) {
 drawRouletteWheel();
 
 
-
-
-function negocios(text){
+function updateGameArea(text){
   if(text == "Negocio"){
     $(document).ready(function(){
       $(".biz").css("display", "flex");
       $(".biz").addClass("justify-content","center");
     })
+  }else if (text == "Quincena") {
+    
+    $("#ahorroTotal").html(empleo.increaseSavings(quincenaHtml).toLocaleString("MX", { style: 'currency', currency: 'USD'}));
   }
 }

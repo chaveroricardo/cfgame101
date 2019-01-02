@@ -49,6 +49,3 @@ function randomName(){
 
 //funcion revaluate
 
-function revaluate(){
-    
-};

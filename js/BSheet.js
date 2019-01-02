@@ -2,8 +2,22 @@ function Career(profesion, income, mortgageLiability, carLoanLiability, creditCa
   this.profesion = profesion;
   this.income = income;
 
+  this.increaseSavings = function(e){
+    e = 0;
+    if(e==0){
+    var initialSavings = this.savings();
+    return initialSavings + this.cash();
+    }else{
+      initialSavings += this.cash(); 
+    }
+  };
+
+  this.percentage = function(){
+    return this.residualIncome()/this.totalExpenses()*100+"%";
+  };
+
   this.totalExpenses = function(){
-    return this.taxes() + this.mortgage() + this.carLoan() + this.creditCardLoan() + this.studentLoan() + this.otherExpenses();
+    return this.taxes() + this.mortgage() + this.carLoan() + this.creditCardLoan() + this.loanPayment()+ this.studentLoan() + this.otherExpenses();
   };
 
   this.totalIncome = function(){
@@ -33,34 +47,22 @@ function Career(profesion, income, mortgageLiability, carLoanLiability, creditCa
   
   this.mortgage = function(){
     var pagoPorMillar = 11.2;
-    return this.mortgageLiability*pagoPorMillar/1000;
+    return this.mortgageLiability/1000*pagoPorMillar;
   }
   this.carLoan = function(){
     var pagoPorMillar = 24.3;
-    if(this.carLoanLiability < 100000){
-    return this.carLoanLiability*pagoPorMillar/100;
-  }
-    else{
-    return this.carLoanLiability*pagoPorMillar/1000;
-    }
+    return this.carLoanLiability/1000*pagoPorMillar;
+    
   };
+
   this.creditCardLoan = function(){
     var pagoPorMillar = 54.2;
-    if(this.creditCardLiability < 100000){
-      return this.creditCardLiability*pagoPorMillar/100;
-    }
-      else{
-      return this.creditCardLiability*pagoPorMillar/1000;
-      }
+    return this.creditCardLiability/1000*pagoPorMillar;
   };
+
   this.studentLoan = function(){
     var pagoPorMillar = 11.3;
-    if(this.studentLoanLiability < 100000){
-      return this.studentLoanLiability*pagoPorMillar/100;
-    }
-      else{
-      return this.studentLoanLiability*pagoPorMillar/1000;
-      }
+    return this.studentLoanLiability/1000*pagoPorMillar;
   };
 
   this.otherExpenses = function(){
@@ -88,27 +90,27 @@ var income = 40000;
 
 var abogado = new Career ("Abogado",income,1000000,100000,65000,100000,25000);
 
-var administrador = new Career("Administrador",income*.45,abogado.mortgageLiability*0.45,abogado.carLoanLiability*0.045,abogado.creditCardLiability*0.02925,abogado.studentLoanLiability*0.045,abogado.loanPaymentLiability*0.01125);
+var administrador = new Career("Administrador",income*.45,abogado.mortgageLiability*0.45,abogado.carLoanLiability*0.45,abogado.creditCardLiability*0.45,abogado.studentLoanLiability*0.45,abogado.loanPaymentLiability*0.45);
 
-var asistente = new Career("Asistente",income*.38,abogado.mortgageLiability*0.375,abogado.carLoanLiability*0.0375,abogado.creditCardLiability*0.024375,abogado.studentLoanLiability*0.0375,abogado.loanPaymentLiability*0.009375);
+var asistente = new Career("Asistente",income*.38,abogado.mortgageLiability*0.38,abogado.carLoanLiability*0.38,abogado.creditCardLiability*0.38,abogado.studentLoanLiability*0.38,abogado.loanPaymentLiability*0.38);
 
-var conserje = new Career("Conserje",income*.33,abogado.mortgageLiability*0.325,abogado.carLoanLiability*0,abogado.creditCardLiability*0,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.008125);
+var conserje = new Career("Conserje",income*.33,abogado.mortgageLiability*0.33,abogado.carLoanLiability*0,abogado.creditCardLiability*0,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.33);
 
-var desarroladorSr = new Career("FullStack Developer",income*1.7,abogado.mortgageLiability*1.7,abogado.carLoanLiability*0.17,abogado.creditCardLiability*0.1105,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.0425);
+var desarroladorSr = new Career("FullStack Developer",income*1.7,abogado.mortgageLiability*1.7,abogado.carLoanLiability*1.7,abogado.creditCardLiability*1.7,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*1.7);
 
-var enfermero = new Career("Enfermero", income*.5,abogado.mortgageLiability*0.5,abogado.carLoanLiability*0.05,abogado.creditCardLiability*0.0325,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.0125);
+var enfermero = new Career("Enfermero", income*.5,abogado.mortgageLiability*0.5,abogado.carLoanLiability*0.5,abogado.creditCardLiability*0.5,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.5);
 
-var ingeniero = new Career("Ingeniero", income*1.3,abogado.mortgageLiability*1.3,abogado.carLoanLiability*0.13,abogado.creditCardLiability*0.0845,abogado.studentLoanLiability*0.07,abogado.loanPaymentLiability*0.0325);
+var ingeniero = new Career("Ingeniero", income*1.3,abogado.mortgageLiability*1.3,abogado.carLoanLiability*1.3,abogado.creditCardLiability*1.3,abogado.studentLoanLiability*0.7,abogado.loanPaymentLiability*1.3);
 
-var mecanico = new Career("Mecánico",income*.33,abogado.mortgageLiability*0.325,abogado.carLoanLiability*0.0325,abogado.creditCardLiability*0,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.008125);
+var mecanico = new Career("Mecánico",income*.33,abogado.mortgageLiability*0.33,abogado.carLoanLiability*0.33,abogado.creditCardLiability*0,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.33);
 
-var medico = new Career("Médico",income*3,abogado.mortgageLiability*3,abogado.carLoanLiability*0.15,abogado.creditCardLiability*0.195,abogado.studentLoanLiability*0.3,abogado.loanPaymentLiability*0.075);
+var medico = new Career("Médico",income*3,abogado.mortgageLiability*3,abogado.carLoanLiability*3,abogado.creditCardLiability*3,abogado.studentLoanLiability*3,abogado.loanPaymentLiability*3);
 
-var piloto = new Career("Piloto Aviador", income*2,abogado.mortgageLiability*2,abogado.carLoanLiability*0.2,abogado.creditCardLiability*0.13,abogado.studentLoanLiability*0.2,abogado.loanPaymentLiability*0.05);
+var piloto = new Career("Piloto Aviador", income*2,abogado.mortgageLiability*2,abogado.carLoanLiability*2,abogado.creditCardLiability*2,abogado.studentLoanLiability*2,abogado.loanPaymentLiability*2);
 
-var profesor = new Career("Profesor",income*.18,abogado.mortgageLiability*0.175,abogado.carLoanLiability*0.0175,abogado.creditCardLiability*0.011375,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.004375);
+var profesor = new Career("Profesor",income*.18,abogado.mortgageLiability*0.18,abogado.carLoanLiability*0.18,abogado.creditCardLiability*0.18,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.18);
 
-var taxi = new Career("Taxi (Uber)",income*.38,abogado.mortgageLiability*0.375,abogado.carLoanLiability*0.0375,abogado.creditCardLiability*0.024375,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.009375);
+var taxi = new Career("Taxi (Uber)",income*.38,abogado.mortgageLiability*0.38,abogado.carLoanLiability*0.38,abogado.creditCardLiability*0.38,abogado.studentLoanLiability*0,abogado.loanPaymentLiability*0.38);
 
 
 
